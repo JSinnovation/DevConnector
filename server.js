@@ -10,7 +10,8 @@ const posts = require('./routes/api/posts');
 const app = express();
 mongoose.Promise = global.Promise; 
 
-mongoose.connect(process.env.MONGODB);
+mongoose.connect(process.env.MONGODB,{ useNewUrlParser: true
+} );
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
