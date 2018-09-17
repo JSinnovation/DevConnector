@@ -14,9 +14,10 @@ mongoose.Promise = global.Promise;
 mongoose
   .connect(process.env.MONGODB, {
     useNewUrlParser: true
+
+      .then(() => console.log('MongoDB Connected'))
+      .catch(err => console.log(err))
   })
-  .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err));
 // Body parser middleware
 app.use(bodyParser.urlencoded({
   extended: false
@@ -43,7 +44,7 @@ app.use('/api/users', users);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
 
-const port = (process.env.PORT || 3000, ()=>{
+const port = (process.env.PORT || 3000, () => {
   console.log('Server running on port 3000');
 });
 
