@@ -9,8 +9,7 @@
   */
  module.exports = {
   mongoURI: 
-  process.env.MONGODB,
-  //'mongodb://Happy:Happy613@ds149252.mlab.com:49252/skyhawkconnector',
-  //secretOrKey: 'secret'
-  secretOrkey: process.env.SECRET
+  'mongodb://Happy:Happy613@ds149252.mlab.com:49252/skyhawkconnector',
+  secretOrKey: 'secret'
+ 
 };
